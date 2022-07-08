@@ -2,6 +2,10 @@
 
 Important folders are [db_query](https://github.com/julius-ek-hub/pmg_assignment/blob/main/db_query "Open") and [itune_api](https://github.com/julius-ek-hub/pmg_assignment/blob/main/itune_api "Open"). The rest of the structure is just me playing arround and making it possible to view the result on the console and in the browser.
 
+## #Note
+
+Before running any othe command, You need to run `npm install` to install `mongoose` which was used to test for the query result in the respective question. Also edit [db_query/db.js line 4](https://github.com/julius-ek-hub/pmg_assignment/blob/main/db_query/db.js#L4 "Open") to match the `DB_CONNECTION_STRING` of your environment.
+
 ## Itune Api
 
 To view the result on the console, run
@@ -25,8 +29,6 @@ TL;DR? Check
 - [sort.js](https://github.com/julius-ek-hub/pmg_assignment/blob/main/itune_api/sort.js "Open")
 
 ## MongoDB Query
-
-Before running this one, you need to run `npm install` to install `mongoose` which was used to test for the query result. Also edit `db_query/db.js line 4` to match the `DB_CONNECTION_STRING` of your environment.
 
 To view the result on the console, run
 
