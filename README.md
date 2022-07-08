@@ -4,7 +4,7 @@ Important folders are [db_query](https://github.com/julius-ek-hub/pmg_assignment
 
 ## #Note
 
-Before running any othe command, You need to run `npm install` to install `mongoose` which was used to test for the query result in the respective question. Also edit [db_query/db.js line 4](https://github.com/julius-ek-hub/pmg_assignment/blob/main/db_query/db.js#L4 "Open") to match the `DB_CONNECTION_STRING` of your environment.
+Before running any other command, You need to run `npm install` to install `mongoose` which was used to test for the query result in the respective question. Also edit [db_query/db.js line 4](https://github.com/julius-ek-hub/pmg_assignment/blob/main/db_query/db.js#L4 "Open") to match the `DB_CONNECTION_STRING` of your environment.
 
 ## Itune Api
 
