@@ -8,15 +8,18 @@ const completeHTML = (results, length) => `
 	---notstring: yellow;
 	---watch: #707070;
 }
+
 *{
 	box-sizing: border-box;
 }
+
 body, html{
 	height: 100%;
 	margin: 0;
 	background-color:var(---dark);
 	overflow: hidden;
 }
+
 .result-container{
 	width:100%;
 	height: 100%;
@@ -25,6 +28,15 @@ body, html{
 	color: var(---default);
 	font-family: monospace;
 }
+
+.document-container{
+	margin-left:20px;
+}
+
+.document-container>div{
+	display: none;
+}
+
 .arrow{
   width: 0; 
   height: 0; 
@@ -34,19 +46,14 @@ body, html{
   transition: 200ms transform;
 }
 
-.document-container{
-	margin-left:20px;
-}
-
 .document-container.showing .arrow{
 	transform: rotate(90deg);
 }
-.document-container>div:not(:first-child){
-	display: none;
-}
-.document-container.showing>div:not(:first-child){
+
+.document-container.showing>div{
 	display: flex;
 }
+
 .arrow-button{
 	background-color: unset;
 	margin-top: 10px;
@@ -60,9 +67,7 @@ body, html{
     user-select: none;
     -webkit-user-select: none;
 }
-.arrow-button .arrow[showing="true"]{
-	transform: rotate(90deg);
-}
+
 .line {
 	white-space: nowrap;
 }
