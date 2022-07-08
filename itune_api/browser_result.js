@@ -7,14 +7,18 @@ const { byPrimaryGenreName, byRelaseDate } = require("./sort");
 const app = mock_express();
 
 const routeHandler = async (req, res) => {
-	const { sortBy } = req.query;
+	try {
+		const { sortBy } = req.query;
 
-	let results = await fetchAll();
+		let results = await fetchAll();
 
-	if (sortBy === "primaryGenreName") results = results.sort(byPrimaryGenreName);
-	else if (sortBy === "releaseDate") results = results.sort(byRelaseDate);
-
-	res.end(toHTML(results, sortBy));
+		if (sortBy === "primaryGenreName")
+			results = results.sort(byPrimaryGenreName);
+		else if (sortBy === "releaseDate") results = results.sort(byRelaseDate);
+		res.end(toHTML(results, sortBy));
+	} catch (e) {
+		res.status(500).end(e.message);
+	}
 };
 
 module.exports = () => {

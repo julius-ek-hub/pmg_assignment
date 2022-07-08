@@ -6,8 +6,12 @@ const toHTML = require("../to_html");
 const app = mock_express();
 
 const routeHandler = async (req, res) => {
-	let results = await fetchAll();
-	res.end(toHTML(results, "averagePrice"));
+	try {
+		let results = await fetchAll();
+		res.end(toHTML(results, "averagePrice"));
+	} catch (err) {
+		res.status(500).end(err.message);
+	}
 };
 
 module.exports = () => {

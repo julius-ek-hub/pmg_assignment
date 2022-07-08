@@ -24,7 +24,7 @@ module.exports = () => {
 
 				path.handler(
 					{
-						...res,
+						...req,
 						query: (_url.query || "")
 							.split("&")
 							.filter((q) => q)
@@ -37,7 +37,13 @@ module.exports = () => {
 								return prev;
 							}, {}),
 					},
-					res,
+					{
+						end: (message) => res.end(message),
+						status(code) {
+							res.statusCode = code;
+							return { end: (message) => res.end(message) };
+						},
+					},
 				);
 			});
 
